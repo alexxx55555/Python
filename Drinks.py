@@ -20,6 +20,10 @@ print(name + ", what would you like from our menu today?\nHere is what we are se
 order = input().strip().lower()
 price = 0
 
+while order not in ["water", "cola", "espresso", "black coffee", "latte"]:
+    print("Sorry, we don't have that here.\nPlease choose something from the menu.")
+    order = input().strip().lower()
+
 if order == "water":
     price = 5
 elif order == "cola":
@@ -34,9 +38,7 @@ elif order == "latte":
         price = 11
     else:
         price = 4
-else:
-    print("Sorry, we don't have that here.")
-    exit()
+
 
 quantity = int(input("How many drinks would you like?\n"))
 total = price * quantity
